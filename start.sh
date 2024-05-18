@@ -121,6 +121,5 @@ function install_node() {
 install_nodejs_and_npm;
 install_pm2;
 check_go_installation;
-install_node
-kill -INT $$;
-source $HOME/.bash_profile;
+install_node;
+
