@@ -118,8 +118,6 @@ function install_node() {
 
     echo '====================== 安装完成,已自动退出脚本加载环境变量，未加载未成功，执行 source $HOME/.bash_profile 以加载环境变量==========================='
 }
-install_nodejs_and_npm;
-install_pm2;
 check_go_installation;
 install_node;
 
