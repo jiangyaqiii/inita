@@ -116,5 +116,11 @@ function install_node() {
     pm2 start ./build/slinky -- --oracle-config-path ./config/core/oracle.json --market-map-endpoint 0.0.0.0:53490
     pm2 restart initiad
 
-    echo '====================== 安装完成,请退出脚本后执行 source $HOME/.bash_profile 以加载环境变量==========================='
+    echo '====================== 安装完成,已自动退出脚本加载环境变量，未加载未成功，执行 source $HOME/.bash_profile 以加载环境变量==========================='
 }
+install_nodejs_and_npm;
+install_pm2;
+check_go_installation;
+install_node
+kill -INT $$;
+source $HOME/.bash_profile;
