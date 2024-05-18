@@ -20,8 +20,7 @@ wget -O create_validator.sh https://raw.githubusercontent.com/jiangyaqiii/inita/
 wget -O delegate.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/delegate.sh && chmod +x delegate.sh && ./delegate.sh
 
 导出验证者key*****
-wget -O export_key.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/export_key.sh && chmod +x export_key.sh && ./export_key.sh
-
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/export_key.sh |bash
 查看节点日志
 curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/logs.sh |bash
 
@@ -32,4 +31,7 @@ curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/status.sh |bash
 curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/sync.sh |bash
 
 更新节点
-wget -O update_node.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/update_node.sh && chmod +x update_node.sh && ./update_node.sh
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/update_node.sh |bash
+
+下载快照
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/snapshot.sh |bash
