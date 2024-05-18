@@ -11,7 +11,7 @@ wget -O add_wallet.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/a
 wget -O recover_wallet.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/recover_wallet.sh && chmod +x recover_wallet.sh && ./recover_wallet.sh
 
 查询余额
-wget -O balance.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/balance.sh && chmod +x balance.sh && ./balance.sh
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/balance.sh |bash
 
 创建验证者
 wget -O create_validator.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/create_validator.sh && chmod +x create_validator.sh && ./create_validator.sh
@@ -23,13 +23,13 @@ wget -O delegate.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/del
 wget -O export_key.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/export_key.sh && chmod +x export_key.sh && ./export_key.sh
 
 查看节点日志
-wget -O logs.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/logs.sh && chmod +x logs.sh && ./logs.sh
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/logs.sh |bash
 
 查看inita服务状态
-wget -O status.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/status.sh && chmod +x status.sh && ./status.sh
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/status.sh |bash
 
 查看同步状态
-wget -O sync.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/sync.sh && chmod +x sync.sh && ./sync.sh
+curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/sync.sh |bash
 
 更新节点
 wget -O update_node.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/update_node.sh && chmod +x update_node.sh && ./update_node.sh
