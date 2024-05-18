@@ -5,7 +5,7 @@
 wget -O start.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/start.sh && chmod +x start.sh && ./start.sh
 
 生成钱包
-curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/add_wallet.sh |bash
+wget -O add_wallet.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/add_wallet.sh && chmod +x add_wallet.sh && ./add_wallet.sh
 
 导入钱包
 curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/recover_wallet.sh |bash
