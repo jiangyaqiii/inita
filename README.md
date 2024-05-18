@@ -21,6 +21,7 @@ wget -O delegate.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/del
 
 导出验证者key*****
 curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/export_key.sh |bash
+
 查看节点日志
 curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/logs.sh |bash
 
