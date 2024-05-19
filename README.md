@@ -11,7 +11,7 @@ wget -O add_wallet.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/a
 wget -O recover_wallet.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/recover_wallet.sh && chmod +x recover_wallet.sh && ./recover_wallet.sh
 
 查询余额
-curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/balance.sh |bash
+wget -O balance.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/balance.sh && chmod +x balance.sh && ./balance.sh
 
 创建验证者
 wget -O create_validator.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/create_validator.sh && chmod +x create_validator.sh && ./create_validator.sh
