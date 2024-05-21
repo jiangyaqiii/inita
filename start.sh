@@ -50,7 +50,7 @@ function install_node() {
     install_pm2
 
     # 更新和安装必要的软件
-    apt update && apt upgrade -n
+    apt update && apt upgrade -y
     apt install -yq curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev lz4 snapd
 
     # 安装 Go
