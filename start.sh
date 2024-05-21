@@ -14,14 +14,14 @@ function install_nodejs_and_npm() {
     else
         echo "Node.js 未安装，正在安装..."
         curl -fsSL https://deb.nodesource.com/setup_16.x | bash -
-        apt-get install -y nodejs
+        apt-get install -yq nodejs
     fi
 
     if command -v npm > /dev/null 2>&1; then
         echo "npm 已安装"
     else
         echo "npm 未安装，正在安装..."
-        apt-get install -y npm
+        apt-get install -yq npm
     fi
 }
 # 检查并安装 PM2
@@ -51,7 +51,7 @@ function install_node() {
 
     # 更新和安装必要的软件
     apt update && apt upgrade -y
-    apt install -y curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev lz4 snapd
+    apt install -yq curl iptables build-essential git wget jq make gcc nano tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang bsdmainutils ncdu unzip libleveldb-dev lz4 snapd
 
     # 安装 Go
     if ! check_go_installation; then
@@ -106,18 +106,19 @@ function install_node() {
     
     pm2 start initiad -- start && pm2 save && pm2 startup
 
-    # pm2 stop initiad
+    pm2 stop initiad
     
-    # # 配置快照
-    # sudo apt install lz4 -y
-    # curl -L http://95.216.228.91/initia_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
-    # mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
+    # 配置快照
+    sudo apt install lz4 -y
+    curl -L http://95.216.228.91/initia_latest.tar.lz4 | tar -Ilz4 -xf - -C $HOME/.initia
+    mv $HOME/.initia/priv_validator_state.json.backup $HOME/.initia/data/priv_validator_state.json
     
-    # pm2 start ./build/slinky -- --oracle-config-path ./config/core/oracle.json --market-map-endpoint 0.0.0.0:53490
-    # pm2 restart initiad
+    pm2 start ./build/slinky -- --oracle-config-path ./config/core/oracle.json --market-map-endpoint 0.0.0.0:53490
+    pm2 restart initiad
 
     echo '====================== 安装完成,已自动退出脚本加载环境变量，未加载未成功，执行 source $HOME/.bash_profile 以加载环境变量==========================='
 }
+export DEBIAN_FRONTEND=noninteractive
 check_go_installation;
 install_node;
 
