@@ -36,3 +36,7 @@ curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/update_node.sh 
 
 下载快照
 curl -s https://raw.githubusercontent.com/jiangyaqiii/inita/main/snapshot.sh |bash
+
+更新seeds和peers信息
+
+wget -O add_seeds.sh https://raw.githubusercontent.com/jiangyaqiii/inita/main/add_seeds.sh && chmod +x add_seeds.sh && ./add_seeds.sh
